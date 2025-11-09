@@ -24,10 +24,15 @@ export default function Signup() {
     console.log(errors)
     if (errors.length > 0){
       return {
-        errors: errors
+        errors: errors,
+        enteredValues: {
+          email,
+          password
+        }
       }
     }
 
+    formData.reset();
     return {
       errors: null
     }
@@ -44,13 +49,13 @@ export default function Signup() {
 
       <div className="control">
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" name="email" />
+        <input id="email" type="email" name="email" defaultValue={formState?.enteredValues?.email} />
       </div>
 
       <div className="control-row">
         <div className="control">
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" />
+          <input id="password" type="password" name="password" defaultValue={formState?.enteredValues?.password}/>
         </div>
 
         <div className="control">
@@ -92,6 +97,7 @@ export default function Signup() {
         <legend>How did you find us?</legend>
         <div className="control">
           <input
+
             type="checkbox"
             id="google"
             name="acquisition"
