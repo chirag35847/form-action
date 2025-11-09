@@ -1,0 +1,13 @@
+IMPORTANT !! this works after react version 19
+- action gets formdata object
+    - also resets the form upon submit
+    - automatically does the preventDefault
+
+- validation
+    - collecting the errors
+    - import useAction
+    - useAction(arg1, arg2)
+        arg1 -> action function 
+        arg2 -> initial value
+
+    - we can move the action function out of the component
